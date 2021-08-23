@@ -1,0 +1,98 @@
+* {
+  font-family: 'Space Mono', monospace;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  scroll-behavior: smooth;
+  font-size: 16px;
+
+  /* Primary */
+  --dark-cyan: #00474b;
+  --cyan: #3d6666;
+  --light-cyan: #547878;
+  --lightest-cyan: #5e7a7d;
+
+  --bright-cyan: #26c2ae;
+  --bright-cyan-hover: #9fe8df;
+  --disabled-cyan: #0d686d;
+
+  --error: #e17457;
+
+  /* Neutral */
+  --gray: #9ebbbd;
+  --light: #f3f9fa;
+
+  --bg: #c5e4e7;
+
+  /* Typography */
+  --strong: 3rem;
+  --strong-letter-spacing: -1px;
+
+  --body-l: 1.5rem;
+
+  --body: 1rem;
+
+  --body-s: 0.813rem;
+
+  --button: 1.25rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.strong-text {
+  font-size: var(--strong);
+  letter-spacing: var(--strong-letter-spacing);
+}
+
+.body-l-text {
+  font-size: var(--body-l);
+}
+
+.body-text {
+  font-size: var(--body);
+}
+
+.body-s-text {
+  font-size: var(--body-s);
+}
+
+/* Removes number up/down arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input {
+  min-width: 0;
+}
+
+@media (max-width: 375px) {
+  :root {
+    --strong: 2rem;
+    --strong-letter-spacing: -0.66px;
+  }
+}

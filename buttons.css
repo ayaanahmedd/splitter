@@ -1,0 +1,28 @@
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: var(--bright-cyan);
+  color: var(--dark-cyan);
+  padding: 14px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transition: all 0.2s ease-in-out;
+  background-color: var(--bright-cyan-hover);
+}
+
+.btn-primary:disabled {
+  cursor: not-allowed;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--disabled-cyan);
+  color: rgba(0, 71, 75, 0.35);
+}

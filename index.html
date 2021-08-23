@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Splitter" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="buttons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/tip.png" type="image/x-icon" />
+    <title>Splitter</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <main>
+      <img
+        src="./assets/logo.svg"
+        class="logo"
+        alt="Splitter logo. 'SPLI' on one line and 'TTER' on another to indicate splitting."
+      />
+      <section class="card">
+        <div class="card-left">
+          <div class="input-group" id="totalBillGroup">
+            <div class="input-label-container">
+              <label class="body-text input-label" for="totalBill">Bill</label>
+              <small class="body-text input-error" id="totalBillError">Input field is valid</small>
+            </div>
+            <input
+              type="number"
+              class="body-l-text input-field"
+              placeholder="0"
+              name="Total bill value"
+              id="totalBill"
+              oninput="updateTotalBill(event)"
+            />
+          </div>
+
+          <div class="input-group" id="totalTipPercentageGroup">
+            <div class="input-label-container">
+              <label class="body-text input-label">Select Tip %</label>
+              <small class="body-text input-error" id="totalTipPercentageError">Input field is valid</small>
+            </div>
+            <div class="input-tips-container">
+              <button class="body-l-text input-tip" id="tip5" onclick="selectTip(event, 5)">5%</button>
+              <button class="body-l-text input-tip" id="tip10" onclick="selectTip(event, 10)">10%</button>
+              <button class="body-l-text input-tip" id="tip15" onclick="selectTip(event, 15)">15%</button>
+              <button class="body-l-text input-tip" id="tip25" onclick="selectTip(event, 25)">25%</button>
+              <button class="body-l-text input-tip" id="tip50" onclick="selectTip(event, 50)">50%</button>
+              <input type="number" class="body-l-text input-field" placeholder="Custom" id="totalTipPercentage" oninput="selectTip(event)"></input>
+            </div>
+          </div>
+
+          <div class="input-group" id="numberOfPeopleGroup">
+            <div class="input-label-container">
+              <label class="body-text input-label" for="numberOfPeople">Number of People</label>
+              <small class="body-text input-error" id="numberOfPeopleError">Input field is valid</small>
+            </div>
+            <input
+              type="number"
+              class="body-l-text input-field"
+              placeholder="0"
+              name="Number of people"
+              id="numberOfPeople"
+              oninput="updateNumberOfPeople(event)"
+            />
+          </div>
+        </div>
+        <div class="card-right">
+          <section class="card-price-container">
+            <div>
+              <b class="body-text card-price-title">Tip Amount</b>
+              <p class="body-s-text card-price-subtitle">/ person</p>
+            </div>
+            <strong class="strong-text card-price-value" id="tipAmount">₹0.00</strong>
+          </section>
+          <section class="card-price-container">
+            <div>
+              <b class="body-text card-price-title">Total</b>
+              <p class="body-s-text card-price-subtitle">/ person</p>
+            </div>
+            <strong class="strong-text card-price-value" id="totalPrice">₹0.00</strong>
+          </section>
+          <button class="btn btn-primary btn-reset" onclick="resetBill()">Reset</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
